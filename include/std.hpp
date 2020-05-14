@@ -29,6 +29,9 @@ vector<string> listdir(){
 
 void install_pkg(string pkg_link, string filename){
 
-  
+  string cmd = "cd $HOME/.omni_shell/bin && sudo ./file_downloader " + pkg_link + " " + filename;
+  string decompress = "sudo tar -zxvf " + filename + " sudo chmod +x " + filename;
+  system(cmd.c_str());
+  system(decompress.c_str());
 
 }
